@@ -5,6 +5,15 @@ public class Friend {
     private String name;
     private String hp;
     private String school;
+    
+    
+    //초기화를 위한 메서드
+    public Friend (String name, String hp, String school) {
+    	this.name = name;
+    	this.hp = hp;
+    	this.school = school;
+    	
+    }
 
     
     // getter/setter 작성

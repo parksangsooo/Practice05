@@ -17,8 +17,15 @@ public class FriendApp {
         
         for(int i = 0; i < friendArray.length; i++) {
         	System.out.print("이름: ");
-        	sc.next(setName()));
+        	String name = sc.next();
         	System.out.print("핸드폰: ");
+        	String hp = sc.next();
+        	System.out.print("학교: ");
+        	String school = sc.next();
+        	friendArray[i] = new Friend(name, hp, school);
+        	
+        	System.out.print("------------------------------\n");
+
         }
             
       
@@ -26,8 +33,9 @@ public class FriendApp {
         
         
         // 친구정보 출력
-        for (int i = 0; i < friendArray.length; i++) {
+        for (Friend friend : friendArray) {
             //친구정보 출력 메소드 호출
+        	friend.showInfo();        	
         }
 
         sc.close();
