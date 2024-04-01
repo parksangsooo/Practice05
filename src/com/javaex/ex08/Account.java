@@ -6,36 +6,31 @@ public class Account {
     private int balance;
     
     //생성자 작성
-        
-    public void Account (String accountNo) {
+    
+    public Account (String accountNo) {
     	this.accountNo = accountNo;
-    	int balace = 0;
+    	this.balance = 0;
+    }
+    
+    public void deposit(int money) {
+        if (money > 0) {
+            this.balance += money;
+        } else {
+            System.out.println("예금액은 양수로 입력해주세요.");
         }
-    //필요한 메소드 작성
-    public String getAccountNo() { 	// 계좌번호 조회
-    	return this.accountNo;
     }
     
-    public int getBalance() {  // 잔액조회
-    	return this.balance;
+    public void withdraw(int money) {
+        if (money > 0 && this.balance >= money) {
+            this.balance -= money;
+        } else if (money <= 0) {
+            System.out.println("출금액은 양수로 입력해주세요.");
+        } else {
+            System.out.println("잔액이 부족합니다.");
+        }
     }
     
-    
-    public void setBalance(int balance) {  // 잔액조회
-    	this.balance = balance;
+    public void showBalance() {
+        System.out.println(this.balance);
     }
-    
-    public void deposit() { // 입금
-    	return balance += 
-    }
-    
-    public void withdraw() {	// 출금
-    	
-    }
-    
-    public void showBalance() {		
-    	
-    }
-   
-
 }
